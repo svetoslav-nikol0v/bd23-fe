@@ -18,7 +18,22 @@ const Single = () => {
     token,
   };
 
+  const render = (d: any) => {
+    return Object.keys(d).map((key: string, index: number) => (
+      <Typography
+        component={"div"}
+        key={`${key}-${index}`}
+        variant="body2"
+        margin={1}
+        style={{ wordBreak: "break-word" }}
+      >
+        <b>{key}</b>: {typeof d[key] === "object" ? render(d[key]) : d[key]}
+      </Typography>
+    ));
+  };
+
   const { isLoading, data, error } = useFetch<IPerson>(requestParams);
+
   return (
     <PageLayout>
       {isLoading ? (
@@ -34,13 +49,7 @@ const Single = () => {
         <></>
       )}
       {!isLoading && <ErrorMessage error={error} />}
-      {!isLoading && !error && data ? (
-        <Typography style={{ wordBreak: "break-word" }}>
-          {JSON.stringify(data)}
-        </Typography>
-      ) : (
-        <></>
-      )}
+      {!isLoading && !error && data ? render(data) : <></>}
     </PageLayout>
   );
 };
