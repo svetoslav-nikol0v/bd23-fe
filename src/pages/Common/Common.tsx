@@ -91,7 +91,7 @@ const Common = () => {
           }
         />
       ) : (
-        <Typography variant="body2" align="center">
+        <Typography variant="body1" align="center">
           No result
         </Typography>
       )}

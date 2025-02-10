@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { useAppContext } from "../../providers/AppProvider/useAppContext";
 
 interface PrivateRouteProps {
@@ -7,6 +8,6 @@ interface PrivateRouteProps {
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ Component }) => {
   const { isAuthenticated } = useAppContext();
 
-  return isAuthenticated ? <Component /> : <></>;
+  return isAuthenticated ? <Component /> : <Navigate to="/" />;
 };
 export default PrivateRoute;
