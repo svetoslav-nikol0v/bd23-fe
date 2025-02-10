@@ -1,19 +1,12 @@
-import { useAppContext } from '../../providers/AppProvider/useAppContext';
-import { useNavigate } from 'react-router-dom';
+import { useAppContext } from "../../providers/AppProvider/useAppContext";
 
 interface PrivateRouteProps {
-    Component: React.FC;
+  Component: React.FC;
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ Component }) => {
-    const { isAuthenticated } = useAppContext();
-    const navigate = useNavigate();
+  const { isAuthenticated } = useAppContext();
 
-    if (!isAuthenticated) {
-        navigate('/');
-        return;
-    }
-
-    return isAuthenticated ? <Component /> : <></>;
+  return isAuthenticated ? <Component /> : <></>;
 };
 export default PrivateRoute;

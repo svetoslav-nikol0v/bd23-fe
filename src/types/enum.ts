@@ -1,16 +1,16 @@
 export enum Gender {
-    Male = 'Male',
-    Female = 'Female',
-    Unknown = 'unknown',
-    N_A = 'n/a',
+  Male = "Male",
+  Female = "Female",
+  Unknown = "unknown",
+  N_A = "n/a",
 }
 
 export enum Entry {
-    LOGIN,
-    REGISTER,
+  LOGIN,
+  REGISTER,
 }
 
 export enum Method {
-    GET = 'GET',
-    POST = 'POST',
+  GET = "GET",
+  POST = "POST",
 }
