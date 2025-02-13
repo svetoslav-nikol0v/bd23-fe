@@ -34,7 +34,7 @@ const Search = ({ search, onChange, onSearch }: ISearchProps) => {
         - filter by field - <b>`name=John`</b>
       </Typography>
       <Typography variant="body2" margin={"0 !important"}>
-        - sort by field - <b>`sort=John`</b>
+        - sort by field - <b>`sort=name`</b>
       </Typography>
       <Typography variant="body2" margin={"0 !important"}>
         - change the order - <b>`order=desc`</b>, by default is <b>`asc`</b>
